@@ -1,0 +1,12 @@
+version: '3'
+services:
+    fastapp2:
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+      image: fastapp2
+      container_name: fastapp2
+      ports:
+          - 8000:8000
+      command: bash -c "tox && uvicorn app.api:app --reload --host 0.0.0.0"
+
